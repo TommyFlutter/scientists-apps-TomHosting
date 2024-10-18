@@ -1,0 +1,322 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+
+/* Reset Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header and Footer Styles */
+header, footer {
+  background-color: #333333;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+ 
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  height: 90%;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(3, 3, 3, 0.5); */
+  /* z-index: -1; */
+ 
+}
+
+/* Navigation Styles */
+nav {
+  position: absolute;
+  background-color: rgb(155, 15, 165);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 80px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.hamburger {
+  width: 45px;
+  height: 45px;
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: auto; /* Move hamburger button to the left */
+}
+
+.hamburger img {
+  width: 44px;
+  height: 44px;
+}
+
+.nav-links {
+  list-style: none;
+  font-size: larger;
+  display: flex;
+  gap: 1rem;
+}
+
+.tittle {
+  font-size: x-large;  
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: #fff;
+  color: #333;
+}
+
+.nav-links.show {
+  display: block;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+ 
+.skip-link:focus {
+   top: 0;
+}
+
+/* HeroElement Styles */
+.hero {
+  background-color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+  color: #000000;
+  
+}
+
+.hero img{
+  min-width: 100%;
+  height: auto;
+  padding-top: 85px;
+}
+
+/* Main Content Styles */
+main {
+  margin-top: 300px;
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Restaurant List Styles */
+#restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 100px;
+}
+
+.restaurant-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restaurant-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: auto;
+}
+
+.restaurant-content {
+  padding: 20px;
+}
+
+.restaurant-name {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.restaurant-description,
+.restaurant-city,
+.restaurant-rating {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Footer Styles */
+footer {
+  padding: 1.5rem 0;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  background-color: rgb(155, 15, 165);
+  color: #f1eaea;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: medium;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ddd;
+}
+
+footer div p {
+  color: #ccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  #restaurant-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .hero img{
+      width: 100%;
+      height: auto;
+  }
+}
+@media (max-width: 992px) {
+  #restaurant-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  header {
+    height: 30%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: block;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .hamburger {
+    width: 45px;
+    height: 45px;
+    display: block;
+    margin: start;
+  }
+
+  #restaurant-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 100px;
+    height: 40px;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
